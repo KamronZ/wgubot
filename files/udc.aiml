@@ -10,12 +10,12 @@
     
     <category>
         <pattern>begin</pattern>
-        <template>awesome, before we get started, what is your name</template>
+        <template>Awesome, before we get started, what is your name?</template>
     </category>
     
     <category>
         <pattern>My name is *</pattern>
-        <that>awesome, before we get started, what is your name</that>
+        <that>Awesome, before we get started, what is your name</that>
         <template>
             Hello <set name = "username"> <star/></set>
         </template>
@@ -35,6 +35,8 @@
         <that>Are you a CS major</that>
         <template>
             <think><set name = "topic">CS</set></think>
+            Alright, lets narrow the field down a bit.  Are you artistic or
+            enjoy HTML,CSS, or JavaSCript over other programming languages?
             
         </template>
     </category>
@@ -49,7 +51,89 @@
     </category>
     
         
-    
+    <topic name = "cs">
+        
+        <category>
+            <pattern>yes</pattern>
+            <that>Are you artistic or
+            enjoy HTML,CSS, or JavaSCript over other programming languages</that>
+            <template>
+                I think Front-end web development is a great fit for you! According to wikipedia
+                web-developers can expect to make around 65,000 a year, with a 
+                projected job growth of 27% over the next ten years! check it out, https://en.wikipedia.org/wiki/Web_developer
+            </template>
+        </category>>
+        
+        <category>
+            <pattern>no</pattern>
+            <that>Are you artistic or
+            enjoy HTML,CSS, or JavaSCript over other programming languages</that>
+            <template>
+                Sounds like web-development is not for you!  How about SQL? There
+                are many opportunies centered around databases.  Tell me which
+                of the following areas interest you.
+                <br></br>
+                <br></br>
+                1. Big data and using langauges such as python to analyze data 
+                trends.
+                <br></br>
+                2. Designing databases
+                <br></br>
+                3. Neither are particularly interesting to me, show me other career
+                paths!
+            </template>
+        </category>
+        
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <think><set name = "choice"><star/></set></think>
+                <condition name = "choice" value = "1"> I would recommend you look
+                into data analyst as a career option.  Data analyst can expect 
+                and median salary of 86,000, growth is expected to increase
+                by 25% over the next 10 yeras, according 
+                to https://www.discoverdatascience.org/career-information/data-analyst/#:~:text=According%20to%20the%20BLS%2C%20employment,the%20average%20for%20all%20occupations.
+                </condition>
+                <condition name = "choice" value = "2"> I would recommend you look into
+                a career as a database engineer.  The median salary is about 82,000 
+                and expected growth is 11% over the next ten years according to https://en.wikipedia.org/wiki/Database_administrator
+                <br></br>
+                </condition>
+                <condition name = "choice" value = "3"> That's alright!
+                Lets explore some more options.
+                <br></br>
+                <br></br>
+                A. I enjoy desinging programs, debugging, and desinging test.
+                <br></br>
+                B. I don't like any of the options offered so far!
+                What are my options?
+                
+                </condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>*</pattern>
+            <that>What are my options</that>
+            <template>
+                <think><set name = "choice"><star/></set></think>
+                <condition name = "choice" value = "a"> I would recommend a career
+                as a software developer.  The median salary is 100,000 and is
+                growing at 17% over the next 10 years according to: https://en.wikipedia.org/wiki/Programmer 
+                </condition>
+                <condition name = "choice" value = "b"> It looks like a traditional
+                coding job is not for you but thats okay!  I would have you look into
+                a project management career.  Often times project managers need
+                to have a baseline understanding of operating systems, psuedocode
+                 and logic.  A degree is CS with some certifcations should open some
+                 doors for you. You should  head over to https://www.pmi.org for more information </condition>
+                
+            </template>
+        </category>
+        
+        
+        
+    </topic>
     
 
 
