@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+    <category>
+        <pattern>HI</pattern>
+        <template>Hello, I am your virtual assistant.  If you would like for me 
+        to assist you, simply type "begin"
+        </template>
+    </category>
+    
+    <category>
+        <pattern>begin</pattern>
+        <template>awesome, before we get started, what is your name</template>
+    </category>
+    
+    <category>
+        <pattern>My name is *</pattern>
+        <that>awesome, before we get started, what is your name</that>
+        <template>
+            Hello <set name = "username"> <star/></set>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>*</pattern>
+        <that>awesome, before we get started, what is your name</that>
+        <template>
+            Hello <set name = "username"> <star/></set>. I am designed to help
+            Computer Science majors to explore career paths.  Are you a CS major?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>yes</pattern>
+        <that>Are you a CS major</that>
+        <template>
+            <think><set name = "topic">CS</set></think>
+            
+        </template>
+    </category>
+    
+    <category>
+        <pattern>no</pattern>
+        <that>Are you a CS major</that>
+        <template>
+            I am currently not set up to help you with your major, have a great day!
+        </template>
+        
+    </category>
+    
+        
+    
+    
+
+
+
+</aiml>
